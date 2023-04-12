@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management Web Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="product_management.js"></script>
+    <link href="smStyle.css" rel="stylesheet" type="text/css">
+    <style>
+        #jsonModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        #jsonModalContent {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="margin-bottom: 0px;">/*Product Management</h1>
+    <p style="margin-top: 5px;" class="headerDescription"> add, remove, or edit product listings.*/</p>
+
+    <form id="productForm">
+        <label class="const"> var </label><label for="productId">productId</label><br><label class="require"> (required)</label><br>
+        <input type="text" id="productId" name="productId" required><br><br>
+
+        <label class="const"> var </label><label for="productDescription">productDescription</label><br><label class="require"> (required)</label><br>
+        <input type="text" id="productDescription" name="productDescription" required><br><br>
+
+        <label class="const"> var </label><label for="productCategory">productCategory</label><br><label class="require"> (required)</label><br>
+        <input type="text" id="productCategory" name="productCategory" required><br><br>
+
+        <label class="const"> var </label><label for="productUnitOfMeasure">productUnitOfMeasure</label><br><label class="require"> (optional)</label><br>
+        <input type="text" id="productUnitOfMeasure" name="productUnitOfMeasure"><br><br>
+
+        <label class="const"> var </label><label for="productPrice">productPrice</label><br><label class="require"> (required)</label><br>
+        <input type="number" id="productPrice" name="productPrice" step="0.01" required><br><br>
+
+        <label class="const"> var </label><label for="productWeight">productWeight</label><br><label class="require"> (optional)</label><br>
+        <input type="number" id="productWeight" name="productWeight" step="0.01"><br><br>
+
+        <input class="formSubmit" type="submit" value="Submit">
+    </form>
+    <h2 class="headerDescription">/*Product List*/</h2>
+    <select id="productList" name="productList"></select><br><br>
+    <button id="removeProduct">Remove Selected Product</button>
+    <button id="showJson">Show JSON</button>
+    
+    <div id="jsonModal">
+        <div id="jsonModalContent">
+            <pre id="jsonData"></pre>
+            <button id="closeJsonModal">Close</button>
+        </div>
+    </div>
+
+    <script src="product_management.js"></script>
+</body>
+</html>
