@@ -1,4 +1,4 @@
-[
+var product = [
     {
         "productId": "P001",
         "productDescription": "Product 1",
