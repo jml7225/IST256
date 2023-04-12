@@ -1,4 +1,4 @@
-var data = [
+[
     {
         "productId": "P001",
         "productDescription": "Product 1",
