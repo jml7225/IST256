@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Product Management Web Page</title>
+    <link href="eCommerceStyle.css" rel="stylesheet" type="text/css">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="product_management.js"></script>
+
+    <!-- This is the header content. It contains Logo and links -->
+    <div id="logo"> <!-- <img src="logoImage.png" alt="sample logo"> --> 
+        <!-- Company Logo text --> 
+         </div>
+      <div id="headerLinks">
+        <a href="index.html" title="Login/Register">login</a>
+        <a href="#" title="Cart">cart</a>
+        <a href="shopperMan.html" title="Account Details">account details </a>
+        <a href="product_management.html" title="Product Management">Product Management </a>
+  
+        </div>
     <style>
         #jsonModal {
             display: none;
@@ -53,6 +68,7 @@
     </form>
     <h2>Product List</h2>
     <select id="productList" name="productList"></select>
+    <button id="editProduct">Edit Selected Product</button>
     <button id="removeProduct">Remove Selected Product</button>
     <button id="showJson">Show JSON</button>
     
