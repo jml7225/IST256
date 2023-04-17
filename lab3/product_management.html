@@ -81,4 +81,40 @@
 
     <script src="product_management.js"></script>
 </body>
+    
+<footer>
+	$('#txt-search').keyup(function(){
+            var searchField = $(this).val();
+            if(searchField === '')  {
+                $('#filter-records').html('');
+                return;
+            }
+            
+            var regex = new RegExp(searchField, "i");
+            var output = '
+<div class="row">';
+            var count = 1;
+              $.each(data, function(key, val){
+                if ((val.productId.search(regex) != -1) || (val.productDescription.search(regex) != -1)) {
+                  output += '<div class="col-md-6 well">';
+                  output += '<div class="col-md-3"><img class="img-responsive" src="'+notex.jpg+'" alt="'+ val.productDescription +'"></div>';
+                  output += '<div class="col-md-7">';
+                  output += '<h5>' + val.productId + '</h5>';
+                  output += '' + productDescription + ''
+                  output += '</div>';
+                  output += '</div>';
+                  if(count%2 == 0){
+                    output += '</div><div class="row">'
+                  }
+                  count++;
+                }
+              });
+              output += '</div>';
+	$('#productId', '#productDescription', 'productCategory', 'productUnitOfMeasure', 'productPrice', 'productWeight').autocomplete({
+    	source: "products.json"
+	});
+	
+              $('#filter-records').html(output);
+        });
+</footer>
 </html>
