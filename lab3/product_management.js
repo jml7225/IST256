@@ -84,3 +84,25 @@ function displayProducts() {
         $('#productList').append(`<option value="${product.productId}">${product.productId} - ${product.productDescription}</option>`);
     });
 }
+// Handle selection of a product to edit
+$("#productList").change(function() {
+    let productId = $("#productList").val();
+    if (productId) {
+        let products = JSON.parse(localStorage.getItem("products") || "[]");
+        // Find the selected product from the products array
+        let selectedProduct = products.find(product => product.productId === productId);
+        if (selectedProduct) {
+            // Fill the form fields with the selected product's data
+            $("#productId").val(selectedProduct.productId);
+            $("#productDescription").val(selectedProduct.productDescription);
+            $("#productCategory").val(selectedProduct.productCategory);
+            $("#productUnitOfMeasure").val(selectedProduct.productUnitOfMeasure);
+            $("#productPrice").val(selectedProduct.productPrice);
+            $("#productWeight").val(selectedProduct.productWeight);
+        }
+    } else {
+        // Clear the form fields if no product is selected
+        $("#productForm")[0].reset();
+    }
+});
+
