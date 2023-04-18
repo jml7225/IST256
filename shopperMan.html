@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper Management Web Page</title>
+    <link href="smStyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+     <!-- This is the header content. It contains Logo and links -->
+     <div id="logo"> <!-- <img src="logoImage.png" alt="sample logo"> --> 
+        <!-- Company Logo text --> 
+         </div>
+      <div id="headerLinks">
+        <a href="index.html" title="Login/Register">login()</a>
+        <a href="#" title="Cart">cart()</a>
+        <a href="shopperMan.html" title="Account Details">accountDetails() </a>
+        <a href="product_management.html" title="Product Management">productManagement() </a>
+  
+        </div>
+    <h1>/*Account Creation*/</h1>
+    <form id="shopper-form">
+        <label class="const"> var </label><label for="email">emailAddress</label><br><label class="require"> (required)</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label class="const"> var </label><label for="firstName">firstName</label><br><label class="require"> (required)</label><br>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label class="const"> var </label><label for="lastName">lastName</label><br><label class="require"> (required)</label><br>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label class="const"> var </label><label for="phone">phoneNumber</label><br><label class="require"> (optional)</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <label class="const"> var </label><label for="age">age</label><br><label class="require"> (required)</label><br>
+        <input type="number" id="age" name="age" min="1" required><br><br>
+
+        <label class="const"> var </label><label for="streetAddress">streetAddress</label><br><label class="require"> (required)</label><br>
+        <input type="text" id="streetAddress" name="streetAddress" required><br><br>
+
+        <label class="const"> var </label><label for="city">city</label><br><label class="require"> (required)</label><br>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label class="const"> var </label><label for="state">state</label><br><label class="require"> (required)</label><br>
+        <input type="text" id="state" name="state" required><br><br>
+
+        <label class="const"> var </label> <label for="zipcode">zipcode</label><br><label class="require"> (required)</label><br>
+        <input type="text" id="zipcode" name="zipcode" pattern="\d{5}" required><br><br>
+
+        <button class="formSubmit" type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("shopper-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const phone = document.getElementById("phone").value;
+            const age = document.getElementById("age").value;
+            const streetAddress = document.getElementById("streetAddress").value;
+            const city = document.getElementById("city").value;
+            const state = document.getElementById("state").value;
+            const zipcode = document.getElementById("zipcode").value;
+
+            const shopperData = {
+                email: email,
+                name: {
+                    first: firstName,
+                    last: lastName,
+                },
+                phone: phone,
+                age: age,
+                address: {
+                    street: streetAddress,
+                    city: city,
+                    state: state,
+                    zipcode: zipcode,
+                },
+            };
+
+            alert(JSON.stringify(shopperData, null, 2));
+        });
+    </script>
+</body>
+</html>
