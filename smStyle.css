@@ -1,0 +1,65 @@
+* {
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+body {
+    background-color: #1e1e1e;
+    text-align: center;
+  }
+  
+h1 {
+    color: #6a993e;
+}
+
+.headerDescription{
+    color: #6a993e;
+}
+
+label{
+    color: #9cdcf0;
+}
+
+.require{
+    color: #ce9178;
+    font-style: italic;
+}
+
+.const{
+    color:#569cd6
+}
+
+input{
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+button{
+    background-color: white;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.formSubmit{
+        background-color: white;
+        padding: 15px;
+        font-size: 16px;
+}
+
+
+button:hover {
+    animation: color-change 10s infinite;
+  }
+
+@keyframes color-change {
+    0% { background: #ffb3b3; }
+    10% { background: #ffd4b3;}
+    20% { background: #fff6b3; }
+    30% { background: #cdffb3; }
+    40% { background: #b3ffd2; }
+    50% { background: #b3f7ff;}
+    60% { background: #b3cfff; }
+    70% { background: #d0b3ff; }
+    80% { background: #f4b3ff; }
+    90% { background: #ffb3de; }
+    100% { background: #ffb3bd; }
+  }

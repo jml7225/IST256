@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper Management Web Page</title>
+	<style type="text/css">
+	@import url("eCommerceStyle.css");
+    </style>
+<div id="headerLinks">
+	<a href="index.html" title="Home">Home</a>
+       <a href="#" title="Login/Register">login</a>
+      <a href="#" title="Cart">cart</a>
+      <a href="shopperMan.html" title="Account Details">account details </a></div>
+</head>
+<body>
+    <h1><br>
+    </h1>
+    <h1> Shopper Management</h1>
+<form id="shopper-form">
+  <label for="email">Email address (required):</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="firstName">First Name (required):</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label for="lastName">Last Name (required):</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="phone">Phone Number (optional):</label>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <label for="age">Age (required):</label>
+        <input type="number" id="age" name="age" min="1" required><br><br>
+
+        <label for="streetAddress">Street Address (required):</label>
+        <input type="text" id="streetAddress" name="streetAddress" required><br><br>
+
+        <label for="city">City (required):</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="state">State (required):</label>
+        <input type="text" id="state" name="state" required><br><br>
+
+        <label for="zipcode">Zipcode (required):</label>
+        <input type="text" id="zipcode" name="zipcode" pattern="\d{5}" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("shopper-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const phone = document.getElementById("phone").value;
+            const age = document.getElementById("age").value;
+            const streetAddress = document.getElementById("streetAddress").value;
+            const city = document.getElementById("city").value;
+            const state = document.getElementById("state").value;
+            const zipcode = document.getElementById("zipcode").value;
+
+            const shopperData = {
+                email: email,
+                name: {
+                    first: firstName,
+                    last: lastName,
+                },
+                phone: phone,
+                age: age,
+                address: {
+                    street: streetAddress,
+                    city: city,
+                    state: state,
+                    zipcode: zipcode,
+                },
+            };
+
+            alert(JSON.stringify(shopperData, null, 2));
+        });
+    </script>
+</body>
+</html>

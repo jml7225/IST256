@@ -1,0 +1,26 @@
+[
+    {
+        "productId": "P001",
+        "productDescription": "Product 1",
+        "productCategory": "Electronics",
+        "productUnitOfMeasure": "pcs",
+        "productPrice": 100,
+        "productWeight": 0.5
+    },
+    {
+        "productId": "P002",
+        "productDescription": "Product 2",
+        "productCategory": "Home Appliances",
+        "productUnitOfMeasure": "pcs",
+        "productPrice": 200,
+        "productWeight": 1.5
+    },
+    {
+        "productId": "P003",
+        "productDescription": "Product 3",
+        "productCategory": "Toys",
+        "productUnitOfMeasure": "pcs",
+        "productPrice": 50,
+        "productWeight": 0.3
+    }
+]

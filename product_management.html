@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Management Web Page</title>
+    <link href="eCommerceStyle.css" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="product_management.js"></script>
+
+    <!-- This is the header content. It contains Logo and links -->
+    <div id="logo"> <!-- <img src="logoImage.png" alt="sample logo"> --> 
+        <!-- Company Logo text --> 
+         </div>
+      <div id="headerLinks">
+        <a href="index.html" title="Login/Register">login</a>
+        <a href="#" title="Cart">cart</a>
+        <a href="shopperMan.html" title="Account Details">account details </a>
+        <a href="product_management.html" title="Product Management">Product Management </a>
+  
+        </div>
+    <style>
+        #jsonModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        #jsonModalContent {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Management</h1>
+
+    <form id="productForm">
+        <label for="productId">Product ID (required):</label>
+        <input type="text" id="productId" name="productId" required><br>
+
+        <label for="productDescription">Product Description (required):</label>
+        <input type="text" id="productDescription" name="productDescription" required><br>
+
+        <label for="productCategory">Product Category (required):</label>
+        <input type="text" id="productCategory" name="productCategory" required><br>
+
+        <label for="productUnitOfMeasure">Product Unit of Measure (optional):</label>
+        <input type="text" id="productUnitOfMeasure" name="productUnitOfMeasure"><br>
+
+        <label for="productPrice">Product Price (required):</label>
+        <input type="number" id="productPrice" name="productPrice" step="0.01" required><br>
+
+        <label for="productWeight">Product Weight (optional):</label>
+        <input type="number" id="productWeight" name="productWeight" step="0.01"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <h2>Product List</h2>
+    <select id="productList" name="productList"></select>
+    <button id="editProduct">Edit Selected Product</button>
+    <button id="removeProduct">Remove Selected Product</button>
+    <button id="showJson">Show JSON</button>
+    
+    <div id="jsonModal">
+        <div id="jsonModalContent">
+            <pre id="jsonData"></pre>
+            <button id="closeJsonModal">Close</button>
+        </div>
+    </div>
+
+    <script src="product_management.js"></script>
+</body>
+    
+<footer>
+	$('#txt-search').keyup(function(){
+            var searchField = $(this).val();
+            if(searchField === '')  {
+                $('#filter-records').html('');
+                return;
+            }
+            
+            var regex = new RegExp(searchField, "i");
+            var output = '
+<div class="row">';
+            var count = 1;
+              $.each(data, function(key, val){
+                if ((val.productId.search(regex) != -1) || (val.productDescription.search(regex) != -1)) {
+                  output += '<div class="col-md-6 well">';
+                  output += '<div class="col-md-3"><img class="img-responsive" src="'+notex.jpg+'" alt="'+ val.productDescription +'"></div>';
+                  output += '<div class="col-md-7">';
+                  output += '<h5>' + val.productId + '</h5>';
+                  output += '' + productDescription + ''
+                  output += '</div>';
+                  output += '</div>';
+                  if(count%2 == 0){
+                    output += '</div><div class="row">'
+                  }
+                  count++;
+                }
+              });
+              output += '</div>';
+	$('#productId', '#productDescription', 'productCategory', 'productUnitOfMeasure', 'productPrice', 'productWeight').autocomplete({
+    	source: "products.json"
+	});
+	
+              $('#filter-records').html(output);
+        });
+</footer>
+</html>
