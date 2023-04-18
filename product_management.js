@@ -106,5 +106,3 @@ $("#productList").change(function() {
     }
 });
 
-
-
