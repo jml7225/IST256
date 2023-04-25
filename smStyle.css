@@ -67,3 +67,44 @@ button:hover {
     90% { background: #ffb3de; }
     100% { background: #ffb3bd; }
   }
+
+  @keyframes color {
+    0% { color: #ffb3b3; }
+    10% { color: #ffd4b3;}
+    20% { color: #fff6b3; }
+    30% { color: #cdffb3; }
+    40% { color: #b3ffd2; }
+    50% { color: #b3f7ff;}
+    60% { color: #b3cfff; }
+    70% { color: #d0b3ff; }
+    80% { color: #f4b3ff; }
+    90% { color: #ffb3de; }
+    100% { color: #ffb3bd; }
+  }
+
+  .cartItems{
+	color: #9cdcf0;
+}
+
+.cartDiv{
+    border-bottom:1px solid white;
+}
+
+p {
+    color: #ce9178;
+}
+
+.delete{
+    margin-bottom: 15px;
+}
+
+.empty{
+    margin-top: 300px;
+    font-size: 100px;
+    animation: color 5s infinite;
+}
+
+.totalHR{
+    padding-top: 20px;
+    border-top:1px solid white;
+}
