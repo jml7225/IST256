@@ -114,7 +114,7 @@ function loadCart(){
 function removeItem(btnid){  
     let indexMatch = array.findIndex(indexMatch => indexMatch.productId === btnid);
     div.innerHTML = "";
-    array.splice(btnid, 1);
+    array.splice(indexMatch, 1);
     loadCart();
 }
 </script>

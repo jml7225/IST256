@@ -87,9 +87,6 @@ button:hover {
     margin: 5px;
 }
 
-.cartDiv{
-    border-bottom:1px solid white;
-}
 
 p {
     margin: 5px;
@@ -109,5 +106,4 @@ p {
 .totalHR{
     padding-top: 20px;
     margin: 0px;
-    border-top:1px solid white;
 }
